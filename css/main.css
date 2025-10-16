@@ -4,6 +4,8 @@ body {
     font-size: 16px;
     background-color: #000;
     font-family: sans-serif;
+    padding-top: constant(safe-area-inset-top); /* For older iOS */
+    padding-top: env(safe-area-inset-top); /* For newer iOS */
 }
 
 
