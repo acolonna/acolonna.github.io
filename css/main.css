@@ -7,6 +7,9 @@ body {
     padding-top: constant(safe-area-inset-top); /* For older iOS */
     padding-top: env(safe-area-inset-top); /* For newer iOS */
     color: #FFF;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
 
@@ -42,5 +45,33 @@ div.ipPill > button {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#tempDragBubble {
+    width: 4em;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #FFF;
+    color: #000;
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    user-select: none;
+    /* For older browsers, consider adding vendor prefixes for broader compatibility */
+    -webkit-user-select: none; /* Safari, Chrome, Opera */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+}
+
+#timeTempChart {
+    background-color: #500;
+    position: fixed;
+    top: 20vh;
+    height: 75vh;
+    left: 20vw;
+    width: 75vw;
 }
 
