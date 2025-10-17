@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Drag & Drop Test</title>
+    <title>My App</title>
+    <link rel="manifest" href="app.webmanifest">
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/main.js"></script>
 </head>
 <body>
     <button id="reloadButton" onclick="window.location.reload();">&orarr;</button>
+    <div class="times">
+        <span id="0" class="permanentTime">0:00A</span>
+        <span id="4" class="permanentTime">4:00A</span>
+        <span id="8" class="permanentTime">8:00A</span>
+        <span id="12" class="permanentTime">12:00P</span>
+        <span id="16" class="permanentTime">4:00P</span>
+        <span id="20" class="permanentTime">8:00P</span>
+        <span id="24" class="permanentTime">0:00A</span>
+    </div>
+    <div class="temps">
+        <span id="18" class="permanentTemp">18</span>
+        <span id="22" class="permanentTemp">22</span>
+        <span id="26" class="permanentTemp">26</span>
+        <span id="30" class="permanentTemp">30</span>
+    </div>
     <div id="timeTempChart"></div>
 </body>
 </html>

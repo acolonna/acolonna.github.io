@@ -28,41 +28,6 @@ body {
     margin: 0;
 }
 
-
-div.ipPill {
-    background-color: #222;
-    border: 3px solid #444;
-    padding: 0.25em 0.25em 0.25em 1em;
-    border-radius: 9999px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90vw;
-    white-space: nowrap;
-    color: #999;
-    font-size: 2em;
-    gap: 1em;
-}
-
-div.ipPill > button {
-    font-size: 1em;
-    font-weight: 700;
-    width: 1.75em;
-    height: 1.75em;
-    border-radius: 9999px;
-    border-width: 0;
-    aspect-ratio: 1;
-    background-color: #555;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 div.chartLine, div.chartDot {
     background-color: #FFFFFF;
     position: absolute;
@@ -127,9 +92,35 @@ div.previewLine {
 #timeTempChart {
     background-color: #000;
     position: fixed;
-    top: 20vh;
-    height: 75vh;
+}
+
+#timeTempChart,
+.times,
+.temps {
     left: 20vw;
+    top: 20vw;
     width: 75vw;
+    height: 75vw;
+}
+
+.times {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    width: auto;
+    left: 6vw;
+    position: absolute;
+    z-index: 1000;
+}
+
+.temps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    position: absolute;
+    z-index: 1000;
 }
 
