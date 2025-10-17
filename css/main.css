@@ -92,15 +92,10 @@ div.previewLine {
 #timeTempChart {
     background-color: #000;
     position: fixed;
-}
-
-#timeTempChart,
-.times,
-.temps {
     left: 20vw;
-    top: 20vw;
+    top: 20vh;
     width: 75vw;
-    height: 75vw;
+    height: 75vh;
 }
 
 .times {
@@ -108,8 +103,10 @@ div.previewLine {
     flex-direction: column;
     justify-content: space-between;
     align-items: end;
-    width: auto;
     left: 6vw;
+    top: 19vh;
+    width: auto;
+    height: 77vh;
     position: absolute;
     z-index: 1000;
 }
@@ -119,6 +116,9 @@ div.previewLine {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    left: 17.5vw;
+    top: 17vh;
+    width: 80vw;
     height: auto;
     position: absolute;
     z-index: 1000;
