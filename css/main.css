@@ -12,6 +12,22 @@ body {
     height: 100vh;
 }
 
+#reloadButton {
+    position: fixed;
+    left: 50px;
+    top: 50px;
+    width: 75px;
+    height: 75px;
+    border-radius: 9999px;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    padding: 0px 2px 13px 0;
+    margin: 0;
+}
+
 
 div.ipPill {
     background-color: #222;
@@ -47,6 +63,29 @@ div.ipPill > button {
     align-items: center;
 }
 
+div.chartLine, div.chartDot {
+    background-color: #FFFFFF;
+    position: absolute;
+    height: 1px;
+}
+
+div.chartLine {
+    width: 100%;
+    opacity: 0.25;
+}
+
+div.chartDot {
+    width: 1px;
+    opacity: 10;
+}
+
+div.previewLine {
+    background-color: #FFF;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+
 #tempDragBubble {
     width: 4em;
     height: 4em;
@@ -66,8 +105,27 @@ div.ipPill > button {
     -ms-user-select: none;     /* Internet Explorer/Edge */
 }
 
+#tempBubble {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #888;
+    color: #000;
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    user-select: none;
+    /* For older browsers, consider adding vendor prefixes for broader compatibility */
+    -webkit-user-select: none; /* Safari, Chrome, Opera */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+}
+
 #timeTempChart {
-    background-color: #500;
+    background-color: #000;
     position: fixed;
     top: 20vh;
     height: 75vh;
