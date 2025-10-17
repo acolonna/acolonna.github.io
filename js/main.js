@@ -1,5 +1,6 @@
 var isDragging = false;
 var dragBubble;
+var upperBubble;
 var timeTempChart;
 var dragBoundingBox;
 var dragBounds;
@@ -74,10 +75,14 @@ function handleMouseDown(event) {
     const fragment = new DocumentFragment();
     dragBubble = document.createElement('div');
     dragBubble.id = 'tempDragBubble';
-    dragBubble.innerHTML = 70;
     dragBubble.style.left = `${x}px`;
     dragBubble.style.top = `${y}px`;
     fragment.appendChild(dragBubble);
+    upperBubble = document.createElement('div');
+    upperBubble.id = 'upperBubble';
+    upperBubble.innerText = Math.round((x - dragBounds.x) / horizontalSpan) + 18;
+    dragBubble.appendChild(upperBubble);
+
     previewVerticalLine = document.createElement('div');
     previewVerticalLine.className = 'previewLine';
     previewVerticalLine.style.height = '100%';
@@ -149,7 +154,8 @@ function handleDrag(event) {
     if(oX > 0 && oX < dragBounds.width && oY > 0 && oY < dragBounds.height) {
         dragBubble.style.left = `${x}px`;
         dragBubble.style.top = `${y}px`;
-
+        const tempValue = Math.round(oX / horizontalSpan) + 18;
+        upperBubble.innerText = tempValue;
         previewVerticalLine.style.left = `${Math.round(oX/horizontalSpan)*horizontalSpan}px`;
         previewHorizontalLine.style.top = `${Math.round(oY/verticalSpan)*verticalSpan}px`;
     }
