@@ -102,12 +102,12 @@ function handleMouseDown(event) {
     var xPos = Math.round(oX / horizontalSpan);
     var yPos = Math.round(oY / verticalSpan);
 
-    const container = document.getElementsByTagName('body')[0];
+    const container = timeTempChart;
     const fragment = new DocumentFragment();
     dragBubble = document.createElement('div');
     dragBubble.id = 'tempDragBubble';
-    dragBubble.style.left = `${x}px`;
-    dragBubble.style.top = `${y}px`;
+    dragBubble.style.left = `${oX}px`;
+    dragBubble.style.top = `${oY}px`;
     fragment.appendChild(dragBubble);
     upperBubble = document.createElement('div');
     upperBubble.id = 'upperBubble';
@@ -124,7 +124,7 @@ function handleMouseDown(event) {
     previewHorizontalLine.style.width = '100%';
     previewHorizontalLine.style.top = `${yPos*verticalSpan}px`;
     timeTempChart.appendChild(previewHorizontalLine);
-    document.body.appendChild(fragment);
+    container.appendChild(fragment);
     isDragging = true;
     timeTempChart.addEventListener('mousemove', handleDrag);
     timeTempChart.addEventListener('touchmove', handleDrag);
@@ -156,7 +156,7 @@ function handleMouseUp(event) {
     timeTempChart.removeEventListener('touchmove', handleDrag);
 
 
-    var x = lastMovePosition[0] - dragBounds.x, y = lastMovePosition[1] - dragBounds.y;
+    var x = lastMovePosition[0], y = lastMovePosition[1];
     var xPos = Math.round(x / horizontalSpan);
     var yPos = Math.round(y / verticalSpan);
     
@@ -195,10 +195,10 @@ function handleDrag(event) {
     var xPos = Math.round(oX / horizontalSpan);
     var yPos = Math.round(oY / verticalSpan);
     if(oX > 0 && oX < dragBounds.width && oY > 0 && oY < dragBounds.height) {
-        lastMovePosition[0] = x;
-        lastMovePosition[1] = y;
-        dragBubble.style.left = `${x}px`;
-        dragBubble.style.top = `${y}px`;
+        lastMovePosition[0] = oX;
+        lastMovePosition[1] = oY;
+        dragBubble.style.left = `${oX}px`;
+        dragBubble.style.top = `${oY}px`;
         const tempValue = Math.round(oX / horizontalSpan) + 18;
         upperBubble.innerText = tempValue;
         previewVerticalLine.style.left = `${xPos*horizontalSpan}px`;
