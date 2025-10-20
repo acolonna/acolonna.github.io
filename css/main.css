@@ -84,7 +84,7 @@ div.previewLine {
     -ms-user-select: none;     /* Internet Explorer/Edge */
 }
 
-#tempBubble {
+.tempBubble {
     width: 2em;
     height: 2em;
     display: flex;
@@ -110,6 +110,12 @@ div.previewLine {
     top: 20vh;
     width: 75vw;
     height: 75vh;
+}
+
+#chartLabels {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .times {
