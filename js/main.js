@@ -138,13 +138,13 @@ function handleDrag(event) {
     var x, y, oX, oY;
     switch(event.type) {
         case "mousemove":
-            x = lastMovePosition[0] = event.clientX;
-            y = lastMovePosition[1] = event.clientY;
+            x = event.clientX;
+            y = event.clientY;
             break;
         case "touchmove":
             const touch = event.touches[0];
-            x = lastMovePosition[0] = touch.clientX;
-            y = lastMovePosition[1] = touch.clientY;
+            x = touch.clientX;
+            y = touch.clientY;
             break;
         default:
             return;
@@ -152,6 +152,8 @@ function handleDrag(event) {
     oX = x - dragBounds.x;
     oY = y - dragBounds.y;
     if(oX > 0 && oX < dragBounds.width && oY > 0 && oY < dragBounds.height) {
+        lastMovePosition[0] = x;
+        lastMovePosition[1] = y;
         dragBubble.style.left = `${x}px`;
         dragBubble.style.top = `${y}px`;
         const tempValue = Math.round(oX / horizontalSpan) + 18;

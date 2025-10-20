@@ -7,9 +7,12 @@ body {
     padding-top: constant(safe-area-inset-top); /* For older iOS */
     padding-top: env(safe-area-inset-top); /* For newer iOS */
     color: #FFF;
-    overflow: hidden;
     width: 100vw;
     height: 100vh;
+}
+
+html, body {
+    overflow: hidden;
 }
 
 #reloadButton {
@@ -18,14 +21,6 @@ body {
     top: 50px;
     width: 75px;
     height: 75px;
-    border-radius: 9999px;
-    background-color: #FFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 4em;
-    padding: 0px 2px 13px 0;
-    margin: 0;
 }
 
 div.chartLine, div.chartDot {
