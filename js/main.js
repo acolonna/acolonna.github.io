@@ -124,7 +124,7 @@ function handleMouseDown(event) {
     previewHorizontalLine.style.width = '100%';
     previewHorizontalLine.style.top = `${yPos*verticalSpan}px`;
     timeTempChart.appendChild(previewHorizontalLine);
-    container.appendChild(fragment);
+    document.body.appendChild(fragment);
     isDragging = true;
     timeTempChart.addEventListener('mousemove', handleDrag);
     timeTempChart.addEventListener('touchmove', handleDrag);
